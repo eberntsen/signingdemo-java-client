@@ -12,8 +12,8 @@ For å få det til må vi:
 
 ___
 
-1. Kopier keystore.jks inn i src/main/resources/
-2. Lag et Keystore objekt og hent ut privatnøkkel med alias "signing-demo". Passord for både keystore og nøkkel er "pw":
+1. Ta utgangspunkt i com.eb.signingtest.TestClient klassen
+2. Lag et Keystore objekt og hent ut privatnøkkel med alias "signing-demo". Keystore ligger i resources og heter "keystore.jks". Passord for både keystore og nøkkel er "pw":
       ```java
        KeyStore keyStore = KeyStore.getInstance("JKS");
        keyStore.load(ClassLoaderUtils.getResourceAsStream("keystore.jks", this.getClass()),
@@ -41,3 +41,4 @@ ___
    client.header("Content-type", "text/plain");
    Response response = client.get();
    String responseString = response.readEntity(String.class);
+7. Kjør main-metoden i com.eb.signingtest.SampleRestApplication

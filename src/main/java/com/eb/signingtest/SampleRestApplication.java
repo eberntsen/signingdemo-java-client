@@ -1,5 +1,5 @@
 
-package com.eb.test;
+package com.eb.signingtest;
 
 import org.apache.cxf.common.classloader.ClassLoaderUtils;
 import org.apache.cxf.jaxrs.client.WebClient;
