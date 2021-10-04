@@ -1,6 +1,6 @@
 # signingdemo-java-client
 
-Dette er en lab hvor du skal kalle en GET-tjeneste i et REST API som krever at du signerer requestene du sender. Vi bruker Apache CXF som rammeverk for håndtering av klient og signering. 
+Dette er en lab hvor du skal kalle en GET-tjeneste i et REST API som krever at du signerer requestene du sender. Vi bruker Apache CXF som rammeverk for håndtering av klient og HTTP-signering. 
 
 ___
 
@@ -39,6 +39,11 @@ ___
 6. Sett Content-type header og gjør en GET request med klienten.
    ```java
    client.header("Content-type", "text/plain");
-   Response response = client.get();
-   String responseString = response.readEntity(String.class);
-7. Kjør main-metoden i com.eb.signingtest.SampleRestApplication
+   Response getResponse = client.get();
+   String getResponseString = response.readEntity(String.class);
+7. Prøv også å legg til en POST-request til samme ressurs og se hvordan Digest-headeren blir generert og signert:
+   ```java
+   client.post("some stuff");
+   Response postResponse = client.get();
+   String postResponseString = postResponse.readEntity(String.class);
+8. Kjør main-metoden i com.eb.signingtest.SampleRestApplication. Sjekk request/respons i loggen
