@@ -13,6 +13,8 @@ For å få det til må vi:
 ___
 
 1. Ta utgangspunkt i com.eb.signingtest.TestClient klassen
+
+
 2. Lag et Keystore objekt og hent ut privatnøkkel med alias "signing-demo". Keystore ligger i resources og heter "keystore.jks". Passord for både keystore og nøkkel er "pw":
       ```java
        KeyStore keyStore = KeyStore.getInstance("JKS");
@@ -47,3 +49,6 @@ ___
    Response postResponse = client.get();
    String postResponseString = postResponse.readEntity(String.class);
 8. Kjør main-metoden i com.eb.signingtest.SampleRestApplication. Sjekk request/respons i loggen
+
+
+9. APIet signerer også responsene du får - prøv å legg til verifisering av denne!
