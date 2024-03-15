@@ -19,7 +19,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <version.junit>4.11</version.junit>
         <cxf.version>3.4.4</cxf.version>
-        <spring.version>4.2.1.RELEASE</spring.version>
+        <spring.version>5.3.33</spring.version>
     </properties>
 
         <dependencies>
